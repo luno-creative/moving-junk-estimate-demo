@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="引越し・不用品回収 かんたん見積もり。条件を選ぶと料金の目安を自動計算できるデモページです。">
+<meta name="theme-color" content="#101b2a">
+<title>引越し・不用品回収 かんたん見積もり｜LUNO CREATIVE DEMO</title>
+<style>
+:root{--ink:#172536;--navy:#101b2a;--muted:#65717e;--line:#e5e8e8;--paper:#fff;--bg:#f4f6f5;--accent:#b9e66a;--accent2:#eaf4d9;--shadow:0 18px 50px rgba(18,34,49,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,"Noto Sans JP","Yu Gothic",Meiryo,sans-serif;line-height:1.7}
+a{color:inherit}.wrap{width:min(1080px,calc(100% - 36px));margin:auto}
+header{background:var(--navy);color:#fff}.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-size:18px;font-weight:900;letter-spacing:.12em;text-decoration:none}.brand span{color:var(--accent)}.nav small{color:#b8c4ce;font-size:11px;letter-spacing:.12em}
+.hero{background:linear-gradient(120deg,#101b2a,#1b3446);color:#fff;padding:68px 0 62px;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #ffffff18;border-radius:50%;right:-120px;top:-170px;box-shadow:0 0 0 50px #ffffff08,0 0 0 100px #ffffff05}.hero-inner{position:relative;z-index:1;max-width:760px}.eyebrow{color:var(--accent);font-size:11px;font-weight:900;letter-spacing:.2em}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.25;letter-spacing:-.04em;margin:14px 0}.hero p{color:#c9d3dc;max-width:640px;margin:0}.demo-stamp{display:inline-flex;align-items:center;gap:8px;border:1px solid #ffffff55;border-radius:99px;padding:7px 12px;color:#eaf3df;font-size:11px;margin-top:24px}
+main{padding:44px 0 80px}.layout{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:start}.panel{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:26px;box-shadow:var(--shadow)}.panel h2{font-size:22px;margin:0 0 5px}.sub{font-size:13px;color:var(--muted);margin:0 0 22px}.field{padding:17px 0;border-top:1px solid var(--line)}.field:first-of-type{border-top:0}.field label,.field-title{display:block;font-weight:800;font-size:14px;margin-bottom:9px}.hint{display:block;font-size:11px;color:var(--muted);font-weight:400;margin-top:3px}.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.choice{position:relative}.choice input{position:absolute;opacity:0;pointer-events:none}.choice span{display:flex;min-height:48px;align-items:center;justify-content:center;text-align:center;padding:9px 10px;border:1px solid #dfe4e3;border-radius:8px;background:#fff;font-size:13px;cursor:pointer;transition:.15s}.choice input:checked+span{border-color:#739d39;background:var(--accent2);box-shadow:inset 0 0 0 1px #739d39;color:#385b1b;font-weight:800}.choice input:focus-visible+span{outline:3px solid #b9e66a}.select,.number{width:100%;border:1px solid #dfe4e3;border-radius:8px;padding:12px 13px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}.checks{display:grid;grid-template-columns:1fr 1fr;gap:10px}.check{display:flex;align-items:flex-start;gap:9px;font-size:13px;color:#3e4b58}.check input{accent-color:#6f9637;margin-top:4px;width:16px;height:16px}.result{position:sticky;top:20px;background:var(--navy);color:#fff;border-radius:14px;padding:27px;box-shadow:var(--shadow)}.result .mini{font-size:11px;color:var(--accent);font-weight:900;letter-spacing:.16em}.result h2{font-size:21px;margin:8px 0 16px}.result-line{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid #ffffff20;color:#d2dbe2;font-size:13px}.total-label{font-size:12px;color:#c5d0d8;margin-top:22px}.total{font-size:clamp(30px,4vw,40px);font-weight:900;letter-spacing:-.04em;color:var(--accent);line-height:1.25;margin:5px 0}.range-note{font-size:11px;color:#aebbc5}.result button{width:100%;border:0;border-radius:8px;background:var(--accent);color:var(--navy);font-weight:900;padding:14px;margin-top:22px;font-size:14px;cursor:pointer}.result button:hover{filter:brightness(1.05)}.notice{font-size:11px;color:#aebbc5;line-height:1.65;margin:13px 0 0}.below{margin-top:24px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.info{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px}.info b{display:block;font-size:13px;margin-bottom:5px}.info p{font-size:12px;color:var(--muted);margin:0}.footer{background:#0b1420;color:#aeb9c4;padding:25px 0;font-size:11px}.footer .wrap{display:flex;justify-content:space-between;gap:14px;align-items:center}.footer a{color:#dce5eb;text-decoration:none}.toast{display:none;background:#edf6df;color:#385b1b;border-radius:7px;padding:9px 12px;font-size:12px;margin-top:12px}
+@media(max-width:800px){.layout{grid-template-columns:1fr}.result{position:static}.below{grid-template-columns:1fr}.hero{padding:52px 0}.panel{padding:20px}}
+@media(max-width:460px){.wrap{width:calc(100% - 26px)}.nav{height:60px}.nav small{font-size:9px}.choices{grid-template-columns:1fr 1fr}.checks{grid-template-columns:1fr}.panel{padding:17px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><a class="brand" href="https://luno-creative.github.io/">LUNO<span>.</span> CREATIVE</a><small>INDUSTRY DEMO / MOVING & JUNK</small></div></header>
+<section class="hero"><div class="wrap hero-inner"><div class="eyebrow">SMART ESTIMATE / MOVING & JUNK</div><h1>引越しも、不用品回収も。<br>料金の目安をその場でチェック。</h1><p>間取り・移動距離・追加作業を選ぶだけ。お客様が問い合わせ前に費用感を確認できる、地域事業者向けの見積もりデモです。</p><div class="demo-stamp">● 操作できるサンプルデモ　/　架空の事業者設定</div></div></section>
+<main class="wrap">
+<div class="layout">
+<section class="panel"><h2>かんたん料金シミュレーション</h2><p class="sub">条件を選択すると、右側の概算金額が自動で更新されます。</p>
+
+<div class="field"><span class="field-title">ご依頼内容</span><div class="choices">
+<label class="choice"><input type="radio" name="service" value="move" checked><span>引越し</span></label>
+<label class="choice"><input type="radio" name="service" value="junk"><span>不用品回収</span></label></div></div>
+<div class="field"><label for="room">間取り・荷物量</label><select class="select" id="room"><option value="18000">単身・1R〜1K</option><option value="32000">1DK〜1LDK</option><option value="52000">2DK〜2LDK</option><option value="78000">3DK〜3LDK</option><option value="110000">4LDK以上</option></select></div>
+<div class="field"><label for="distance">移動距離</label><select class="select" id="distance"><option value="0">同じ市区町村</option><option value="8000">〜50km</option><option value="18000">〜100km</option><option value="35000">100km以上</option></select></div>
+<div class="field"><label for="floor">建物・搬出条件</label><select class="select" id="floor"><option value="0">1階 / エレベーターあり</option><option value="5000">階段2〜3階</option><option value="10000">階段4階以上</option><option value="3000">大型家具の吊り下げ等（要現地確認）</option></select></div>
+<div class="field"><span class="field-title">追加オプション</span><div class="checks">
+<label class="check"><input type="checkbox" name="opt" value="6000" data-label="洗濯機の取外し・設置">洗濯機の取外し・設置</label>
+<label class="check"><input type="checkbox" name="opt" value="8000" data-label="梱包サポート">梱包サポート</label>
+<label class="check"><input type="checkbox" name="opt" value="5000" data-label="家具の分解・組立">家具の分解・組立</label>
+<label class="check"><input type="checkbox" name="opt" value="12000" data-label="大型家電の回収">大型家電の回収</label>
+<label class="check"><input type="checkbox" name="opt" value="7000" data-label="段ボール追加">段ボール追加</label>
+<label class="check"><input type="checkbox" name="opt" value="9000" data-label="エアコン移設（基本作業）">エアコン移設（基本作業）</label>
+</div></div>
+
+</section>
+<aside class="result" aria-live="polite">
+<div class="mini">YOUR ESTIMATE</div><h2>お見積もり目安</h2>
+<div id="breakdown"></div>
+<div class="total-label">概算合計（税込・サンプル価格）</div><div class="total" id="total">¥0</div>
+<div class="range-note" id="rangeNote">選択内容に応じた目安です</div>
+<button type="button" id="copyBtn">見積もり内容をコピー</button><div class="toast" id="toast">見積もり内容をコピーしました。</div>
+<p class="notice">※このページはLUNO CREATIVEの制作デモです。表示金額・サービス条件は説明用の仮設定であり、実在する事業者の価格ではありません。実際の料金は現地確認・仕様確認後に確定します。</p>
+</aside>
+</div>
+<div class="below">
+<article class="info"><b>荷物量に合わせて概算</b><p>間取りを選ぶだけで基本料金を自動計算。電話前に費用感を把握できます。</p></article>
+<article class="info"><b>追加作業も見える化</b><p>梱包・家電回収などのオプションを加算し、内訳を分かりやすく表示します。</p></article>
+<article class="info"><b>現地確認で正式見積もり</b><p>階段・大型家具・道路状況などは現地確認後に正式な金額を提示する想定です。</p></article>
+</div>
+</main>
+<footer class="footer"><div class="wrap"><span>© 2026 LUNO CREATIVE / DEMO PROJECT</span><a href="https://luno-creative.github.io/">Web制作のご相談はこちら ↗</a></div></footer>
+<script>
+
+const yen=n=>'¥'+Math.round(n).toLocaleString('ja-JP');
+function calc(){
+ const service=document.querySelector('[name=service]:checked').value;
+ const room=+document.querySelector('#room').value, dist=+document.querySelector('#distance').value, floor=+document.querySelector('#floor').value;
+ const opts=[...document.querySelectorAll('[name=opt]:checked')];
+ let base=service==='junk'?Math.round(room*.72):room;
+ let lines=[['基本料金',base],['距離・エリア加算',dist],['搬出条件加算',floor]];
+ if(service==='junk'){lines[0][0]='回収基本料金';lines[1][0]='出張・運搬加算';}
+ opts.forEach(o=>lines.push([o.dataset.label,+o.value]));
+ const total=lines.reduce((s,x)=>s+x[1],0);
+ document.querySelector('#breakdown').innerHTML=lines.map(x=>`<div class="result-line"><span>${x[0]}</span><b>${yen(x[1])}</b></div>`).join('');
+ document.querySelector('#total').textContent=yen(total);
+ document.querySelector('#rangeNote').textContent=`概算目安：${yen(total*.9)}〜${yen(total*1.15)}（荷物量・現場条件で変動）`;
+ window.currentEstimate=`${service==='junk'?'不用品回収':'引越し'} / ${lines.map(x=>x[0]+': '+yen(x[1])).join(' / ')} / 合計目安 ${yen(total)}`;
+}
+document.querySelectorAll('input,select').forEach(x=>x.addEventListener('change',calc));
+document.querySelector('#copyBtn').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(window.currentEstimate);document.querySelector('#toast').style.display='block'}catch(e){document.querySelector('#toast').textContent=window.currentEstimate;document.querySelector('#toast').style.display='block'}});
+calc();
+
+</script>
+</body></html>
